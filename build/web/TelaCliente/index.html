@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cliente</title>
+        <link href="https://getbootstrap.com.br/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/telacliente.css" media="screen" />
+
+        <script>
+          function ativaCadastro() {
+            document.getElementById('cadastro').style.display='block';
+            document.getElementById('atendimento').style.display='none';
+            document.getElementById('novoatendimento').style.display='none';
+          }
+
+          function ativaAtendimento() {
+            document.getElementById('cadastro').style.display='none';
+            document.getElementById('atendimento').style.display='block';
+            document.getElementById('novoatendimento').style.display='none';
+          }
+          function ativaNovoAtendimento() {
+            document.getElementById('cadastro').style.display='none';
+            document.getElementById('atendimento').style.display='none';
+            document.getElementById('novoatendimento').style.display='block';
+          }
+        </script>
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-sm navbar-light bg-light ">
+          <div class="container-fluid">
+              <span class="navbar-text">BEIBE - Beauty Embuste Indústria de Beleza e Estética</span>
+              <form class="d-flex">
+                  <button class="btn btn-primary" type="submit">Logout</button>
+              </form>
+          </div>
+      </nav>
+
+      <nav class="navbarMenu">
+          <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/funcionarios.png" alt="Cliente" style="width:50%" id="imgcard">
+              <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Cliente</p>
+              </div>
+          </div>
+          <ul>
+              <li><a onclick="ativaCadastro()">Manter Cadastro</a></li>
+              <li><a onclick="ativaAtendimento()">Atendimentos</a></li>
+              <li><a onclick="ativaNovoAtendimento()">Novo Atendimento</a></li>
+          </ul>
+      </nav>
+
+      <div class="container-update container-fluid" id="cadastro" style='display: none;'>
+          <div class="container mt-3">
+              <br>
+              <p>Atualização de Cadastro</p>
+              <form>
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Nome completo">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="CEP">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Rua/Avenida">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Número">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Complemento">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Bairro">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Estado">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Cidade">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Telefone">
+                  <input type="text" class="form-control form-control-sm mt-3" placeholder="Senha">
+                  <br>
+                  <button class="btn btn-primary" type="submit">Atualizar</button>
+              </form>
+          </div>
+      </div>
+
+      <div id="atendimento" style='display: none;'>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">TICKET</th>
+                    <th scope="col">PRODUTO</th>
+                    <th scope="col">CATEGORIA</th>
+                    <th scope="col">DATA ABERTURA</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">RESPONSÁVEL</th>
+                    <th scope="col">ABRIR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>00000000001</td>
+                    <td>Perfume 212</td>
+                    <td>Reclamacao</td>
+                    <td>22/02/2022</td>
+                    <td>Aberto</td>
+                    <td>Fulano de tal</td>
+                    <td><button class="btn" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-folder"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>00000000002</td>
+                  <td>Creme de Pele</td>
+                  <td>Sugestao</td>
+                  <td>22/02/2022</td>
+                  <td>Finalizado</td>
+                  <td>Fulano da silva</td>
+                  <td><button class="btn" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-folder"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>00000000003</td>
+                  <td>Shampoo</td>
+                  <td>Sugestao</td>
+                  <td>22/02/2022</td>
+                  <td>Finalizado</td>
+                  <td>Fulano da silva</td>
+                  <td><button class="btn" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-folder"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+
+        <div class="container-update container-fluid" id="novoatendimento" style='display: none;'>
+            <div class="container mt-3">
+                <br>
+                <p>Abrir Novo Atendimento</p>
+                <form>
+                    <input type="combobox" class="form-control form-control-sm mt-3" placeholder="Produto">
+                    <input type="text" class="form-control form-control-sm mt-3" placeholder="Categoria">
+                    <input type="text" class="form-control form-control-sm mt-3" placeholder="Prioridade">
+                    <br>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Insira sua Sugestao/Reclamacao</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Criar Atendimento</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BEGIN The Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Atendimento</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+
+                <h2>Chat Messages</h2>
+
+                <div class="container">
+                  Fulano de tal
+                  <p>Hello. How are you today?</p>
+                  <span class="time-right">11:00</span>
+                </div>
+
+                <div class="container darker">
+                  Fulano da Silva
+                  <p>Hey! I'm fine. Thanks for asking!</p>
+                  <span class="time-left">11:01</span>
+                </div>
+
+                <div class="container">
+                  fulano de tal
+                  <p>Sweet! So, what do you wanna do today?</p>
+                  <span class="time-right">11:02</span>
+                </div>
+
+                <div class="container darker">
+                  Fulano da silva
+                  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+                  <span class="time-left">11:05</span>
+                </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Digite sua mensagem</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          </div>
+
+        </div>
+        </div>
+        </div>
+        <!-- END The Modal -->
+
+    </body>
+</html>
